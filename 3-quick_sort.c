@@ -16,21 +16,27 @@ int help(int *array, int s, int d, size_t size)
 
 	q = array[d];
 	w = s - 1;
-	for (f = s; f <= d - 1; f++)
+	for (f = s; f < d; f++)
 	{
 		if (array[f] < q)
 		{
 			w++;
-			e = array[w];
-			array[w] = array[f];
-			array[f] = e;
-			print_array(array, size);
+			if (w != f)
+			{
+				e = array[w];
+				array[w] = array[f];
+				array[f] = e;
+				print_array(array, size);
+			}
 		}
 	}
-	e = array[w + 1];
-	array[w + 1] = array[d];
-	array[d] = e;
-	print_array(array, size);
+	if (array[w + 1] > array[d])
+	{
+		e = array[w + 1];
+		array[w + 1] = array[d];
+		array[d] = e;
+		print_array(array, size);
+	}
 	return (w + 1);
 }
 
