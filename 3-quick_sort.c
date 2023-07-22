@@ -2,6 +2,8 @@
 
 /**
  * help - Helping function
+ *
+ * @array: Array should be sorted
  * @s: first
  * @d: last
 */
@@ -30,12 +32,14 @@ void help(int *array, int s, int d)
 /**
  * quick - Quick function
  *
+ * @array: Array should be sorted
  * @s: first
  * @d: last
 */
 void quick(int *array, int s, int d)
 {
 	int q;
+
 	if (s < d)
 	{
 		q = help(array, s, d);
