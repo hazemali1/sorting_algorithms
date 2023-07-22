@@ -13,10 +13,10 @@ void selection_sort(int *array, size_t size)
 
 	if (size < 2)
 		return;
-	for (s = 0; s < n - 1; s++)
+	for (s = 0; s < size - 1; s++)
 	{
 		q = i;
-		for (d = s + 1; d < n; d++)
+		for (d = s + 1; d < size; d++)
 		{
 			if (array[d] < array[q])
 				q = d;
@@ -26,6 +26,8 @@ void selection_sort(int *array, size_t size)
 			w = array[q];
 			array[q] = array[i];
 			array[i] = w;
+			print_array(array, size);
+
 		}
 	}
 }
