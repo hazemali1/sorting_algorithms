@@ -13,11 +13,10 @@ void shell_sort(int *array, size_t size)
 
 	if (size < 2)
 		return;
-	while (g < size)
+	while (g < size / 3)
 		g = g * 3 + 1;
 	while (g >= 1)
 	{
-		g = g / 3;
 		for (s = g; s < size; s++)
 		{
 			for (d = s; d >= g && array[d - g] > array[d]; d -= g)
@@ -28,5 +27,6 @@ void shell_sort(int *array, size_t size)
 			}
 		}
 		print_array(array, size);
+		g = g / 3;
 	}
 }
