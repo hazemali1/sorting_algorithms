@@ -6,7 +6,7 @@
  * @arr: My array
  * @array: Array should sort
  * @size: Size of array
- * @i: Position
+ * @s: Position
 */
 void count(int *arr, int *array, size_t size, int s)
 {
@@ -17,7 +17,7 @@ void count(int *arr, int *array, size_t size, int s)
 		h[(array[j] / s) % 10]++;
 	for (d = 1; d < 10; d++)
 		h[d] += h[d - 1];
-	for (d = size -1; d >= 0; d--)
+	for (d = size - 1; d >= 0; d--)
 	{
 		arr[h[(array[d] / s) % 10] - 1] = array[d];
 		h[(array[d] / s) % 10]--;
